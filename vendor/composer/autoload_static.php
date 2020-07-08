@@ -47,7 +47,9 @@ class ComposerStaticInitbfcb18057ee54956a7ebb35be8b791b8
         ),
         'I' => 
         array (
+            'Infinitypaul\\Validator\\' => 23,
             'Illuminate\\Support\\' => 19,
+            'Illuminate\\Pagination\\' => 22,
             'Illuminate\\Database\\' => 20,
             'Illuminate\\Contracts\\' => 21,
             'Illuminate\\Container\\' => 21,
@@ -124,9 +126,17 @@ class ComposerStaticInitbfcb18057ee54956a7ebb35be8b791b8
         array (
             0 => __DIR__ . '/../..' . '/app/models',
         ),
+        'Infinitypaul\\Validator\\' => 
+        array (
+            0 => __DIR__ . '/..' . '/infinitypaul/php-validator/src',
+        ),
         'Illuminate\\Support\\' => 
         array (
             0 => __DIR__ . '/..' . '/illuminate/support',
+        ),
+        'Illuminate\\Pagination\\' => 
+        array (
+            0 => __DIR__ . '/..' . '/illuminate/pagination',
         ),
         'Illuminate\\Database\\' => 
         array (

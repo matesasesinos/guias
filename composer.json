@@ -1,6 +1,8 @@
 {
     "require": {
-        "illuminate/database": "^7.18"
+        "illuminate/database": "^7.18",
+        "infinitypaul/php-validator": "^1.0",
+        "illuminate/pagination": "^7.19"
     },
     "autoload": {
         "psr-4": {
