@@ -1,5 +1,5 @@
 <?php
-require './tpl/head_guia.php';
+require './tpl/head_guia.php'; //test
 ?>
 <div class="container">
     <div class="row">
