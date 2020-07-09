@@ -5,6 +5,7 @@
         "illuminate/pagination": "^7.19"
     },
     "autoload": {
+        "classmap": ["app/controllers/","app/models/"],
         "psr-4": {
             "App\\Controllers\\": "app/controllers/",
             "App\\Models\\": "app/models/"

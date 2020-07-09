@@ -6,7 +6,7 @@ ini_set('display_startup_errors', 1);
 error_reporting(E_ALL);
 require BASE_PATH.'vendor/autoload.php';
 require_once( __DIR__ . '/config.php');
-use App\Models\Database;
+use \App\Models\Database;
 new Database();
 require_once(__DIR__ .'/start.php');
 use App\Controllers\Guia;?>
