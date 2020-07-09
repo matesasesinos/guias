@@ -1,8 +1,10 @@
-<?php 
+<?php session_start();
+define('DS', DIRECTORY_SEPARATOR, true);
+define('BASE_PATH', __DIR__ . DS, TRUE);
 ini_set('display_errors', 1);
 ini_set('display_startup_errors', 1);
 error_reporting(E_ALL);
-require_once(__DIR__ . '/vendor/autoload.php');
+require BASE_PATH.'vendor/autoload.php';
 require_once( __DIR__ . '/config.php');
 use App\Models\Database;
 new Database();
