@@ -2,9 +2,9 @@
 require 'vendor/autoload.php';
 require 'config.php';
 
-use Models\Database;
+use App\Models\Database;
 
 new Database();
 
-use Controllers\Guia;
+use App\Controllers\Guia;
 Guia::eliminar_fecha(date('Y-m-d'));

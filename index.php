@@ -1,4 +1,4 @@
-<?php require 'start.php';use Controllers\Guia;?>
+<?php require 'start.php';use App\Controllers\Guia;?>
 <?php require './tpl/head.php' ?>
 <div class="container-fluid pl-5 pr-5">
     <div class="row">

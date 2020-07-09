@@ -1,6 +1,6 @@
 <?php
 
-namespace Controllers;
+namespace App\Controllers;
 
 use Models\User;
 use \Infinitypaul\Validator\Validator;

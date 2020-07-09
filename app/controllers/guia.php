@@ -1,7 +1,7 @@
 <?php
 
-namespace Controllers;
-use Models\Guias;
+namespace App\Controllers;
+use App\Models\Guias;
 use \Infinitypaul\Validator\Validator;
 class Guia{
     

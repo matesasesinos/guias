@@ -1,7 +1,7 @@
 <?php
 
 require '../start.php';
-use Controllers\Guia;
+use App\Controllers\Guia;
 
 
 if(isset($_GET['action']) && $_GET['action'] === 'add_guia') {
