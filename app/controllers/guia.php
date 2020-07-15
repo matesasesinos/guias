@@ -127,7 +127,7 @@ class Guia{
 
             $file = fopen($fileName, "r");
             $flag = true;
-            $row = 1;
+            $row = 0;
             while (($column = fgetcsv($file, 10000, ",")) !== FALSE) {
                 $guias = new Guias();
                 $guias->nombre = $nombre;
