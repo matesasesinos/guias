@@ -65,5 +65,6 @@ if(isset($_GET['action']) && $_GET['action'] === 'importar_guia'){
             if($flag) { $flag = false; continue; }
             Guia::import_guia($column[0],$column[1],$column[2],$column[3],$column[4],$column[5],$column[6],$column[7],$column[8]);
         }
+        fclose($column);
     }
 }

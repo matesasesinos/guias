@@ -138,6 +138,7 @@ class Guia{
                 $guias->cp = $cp;
                 $guias->save();
                 //self::email_mandar($email,$guia,$transporte,$nombre,$fecha,$observaciones);
+                fclose($column);
                 return header('Location: ../importar.php?msg=exito');
             }
         } else {
