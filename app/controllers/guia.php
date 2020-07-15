@@ -27,7 +27,7 @@ class Guia{
             $mensaje .= 'El envío se realizo por Vía Cargo y el numero de guía es <strong>'.$guia.'</strong>
             Podes seguir tu envio desde la pagina de Via Cargo. <br><a href="https://www.viacargo.com.ar/" target="_blank"> https://www.viacargo.com.ar/</a>';
         }
-        if(!empty($observaciones)){
+        if(!empty($observaciones) && $transporte !== 'Otros'){
             $mensaje .= '<p>Te queriamos comentar:<br>'.$observaciones.'</p>';
         }
         if($transporte === 'Otros'){
