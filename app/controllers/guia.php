@@ -78,7 +78,7 @@ class Guia{
         ]);
         if($validator->validate()) {
             $guias = Guias::create(['nombre' => $nombre,'dni' => $dni, 'email' => $email, 'transporte' => $transporte, 'fecha' => $fecha, 'guia' => $guia, 'operacion' => $operacion, 'cp' => $cp, 'observaciones' => $observaciones]);
-            self::email_mandar($email,$guia,$transporte,$nombre,$fecha,$observaciones);
+            //self::email_mandar($email,$guia,$transporte,$nombre,$fecha,$observaciones);
             return $guias;
            
         } else {
@@ -137,7 +137,7 @@ class Guia{
                 $guias->operacion = $operacion;
                 $guias->cp = $cp;
                 $guias->save();
-                self::email_mandar($email,$guia,$transporte,$nombre,$fecha,$observaciones);
+                //self::email_mandar($email,$guia,$transporte,$nombre,$fecha,$observaciones);
                 return header('Location: ../importar.php?msg=exito');
             }
         } else {
