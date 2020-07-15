@@ -17,7 +17,7 @@ class Guia{
         if($transporte === 'Andreani') {
             $mensaje .= 'El envío se realizo por Andreani y el numero de guia es <strong>'.$guia.'</strong>
             Podes seguir tu envio desde la pagina de Andreani. <br> 
-            <a href="https://seguimiento.andreani.com/'.$guia.'" target="_blank">https://seguimiento.andreani.com/'.$guia.'</a>
+            <a href="https://seguimiento.andreani.com/'.$guia.'" target="_blank">https://seguimiento.andreani.com/</a>
             ';
         }
         if($transporte === 'Expreso Cargo') {
