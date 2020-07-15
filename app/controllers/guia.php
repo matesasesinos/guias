@@ -48,7 +48,7 @@ class Guia{
             $mail->CharSet      = 'UTF-8';                                  // TCP port to connect to, use 465 for `PHPMailer::ENCRYPTION_SMTPS` above
         
             //Recipients
-            $mail->setFrom('hola@loqueventa.com.net', 'TP3D');
+            $mail->setFrom('hola@tp3d.com.ar', 'TP3D');
             $mail->addAddress($email, $nombre);     // Add a recipient
 
         
