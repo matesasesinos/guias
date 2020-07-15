@@ -33,7 +33,7 @@ class Guia{
         if($transporte === 'Otros'){
             $mensaje .= '<p>Te queriamos comentar:<br>'.$observaciones.'</p>';
         }
-        $mensaje .= 'Ante cualquier duda o consulta te podes comunicar por wahtsapp al +54 9 3512 77-1274 o haciendo click en el siguiente link <a href="http://bit.ly/2BxW45T" target="_blank">bit.ly/2BxW45T</a>';
+        $mensaje .= '<p>Ante cualquier duda o consulta te podes comunicar por wahtsapp al +54 9 3512 77-1274 o haciendo click en el siguiente link <a href="http://bit.ly/2BxW45T" target="_blank">bit.ly/2BxW45T</a></p>';
         $mail = new PHPMailer(true);
         try {
             //Server settings
