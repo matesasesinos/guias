@@ -3,66 +3,66 @@
 namespace App\Controllers;
 use App\Models\Guias;
 use \Infinitypaul\Validator\Validator;
-// use PHPMailer\PHPMailer\PHPMailer;
-// use PHPMailer\PHPMailer\SMTP;
-// use PHPMailer\PHPMailer\Exception;
+use PHPMailer\PHPMailer\PHPMailer;
+use PHPMailer\PHPMailer\SMTP;
+use PHPMailer\PHPMailer\Exception;
 class Guia{
     
     public static function hola(){
         return "hola";
     }
 
-    // public static function email_mandar($email,$guia,$transporte,$nombre,$fecha,$observaciones) {
-    //     $mensaje = '¡Hola '.$nombre.'! <br>Queríamos informarte que tu compra ya esta en camino.<br>';
-    //     if($transporte === 'Andreani') {
-    //         $mensaje .= 'El envío se realizo por Andreani y el numero de guia es <strong>'.$guia.'</strong>
-    //         Podes seguir tu envio desde la pagina de Andreani. <br> 
-    //         <a href="https://seguimiento.andreani.com/'.$guia.'" target="_blank">https://seguimiento.andreani.com/</a>
-    //         ';
-    //     }
-    //     if($transporte === 'Expreso Cargo') {
-    //         $mensaje .= 'El envío se realizo por Expreso Cargo y va a llegar a tu domicilio dentro de las próximas 48hs hábiles.';
-    //     }
-    //     if($transporte === 'Via Cargo') {
-    //         $mensaje .= 'El envío se realizo por Vía Cargo y el numero de guía es <strong>'.$guia.'</strong>
-    //         Podes seguir tu envio desde la pagina de Via Cargo. <br><a href="https://www.viacargo.com.ar/" target="_blank"> https://www.viacargo.com.ar/</a>';
-    //     }
-    //     if(!empty($observaciones) && $transporte !== 'Otros'){
-    //         $mensaje .= '<p>Te queriamos comentar:<br>'.$observaciones.'</p>';
-    //     }
-    //     if($transporte === 'Otros'){
-    //         $mensaje .= '<p>Te queriamos comentar:<br>'.$observaciones.'</p>';
-    //     }
-    //     $mensaje .= 'Ante cualquier duda o consulta te podes comunicar por wahtsapp al +54 9 3512 77-1274 o haciendo click en el siguiente link <a href="http://bit.ly/2BxW45T" target="_blank">bit.ly/2BxW45T</a>';
-    //     $mail = new PHPMailer(true);
-    //     try {
-    //         //Server settings
-    //         $mail->SMTPDebug = false;                      // Enable verbose debug output
-    //         $mail->isSMTP();                                            // Send using SMTP
-    //         $mail->Host       = 'in-v3.mailjet.com';                    // Set the SMTP server to send through
-    //         $mail->SMTPAuth   = true;                                   // Enable SMTP authentication
-    //         $mail->Username   = '865b170d71fc29212af7a76c3b282391';                     // SMTP username
-    //         $mail->Password   = '2837021e77bf57433ea3c3a47fc92e7e';                               // SMTP password
-    //         $mail->SMTPSecure = PHPMailer::ENCRYPTION_STARTTLS;         // Enable TLS encryption; `PHPMailer::ENCRYPTION_SMTPS` encouraged
-    //         $mail->Port       = 587;
-    //         $mail->CharSet      = 'UTF-8';                                  // TCP port to connect to, use 465 for `PHPMailer::ENCRYPTION_SMTPS` above
+    public static function email_mandar($email,$guia,$transporte,$nombre,$fecha,$observaciones) {
+        $mensaje = '¡Hola '.$nombre.'! <br>Queríamos informarte que tu compra ya esta en camino.<br>';
+        if($transporte === 'Andreani') {
+            $mensaje .= 'El envío se realizo por Andreani y el numero de guia es <strong>'.$guia.'</strong>
+            Podes seguir tu envio desde la pagina de Andreani. <br> 
+            <a href="https://seguimiento.andreani.com/'.$guia.'" target="_blank">https://seguimiento.andreani.com/</a>
+            ';
+        }
+        if($transporte === 'Expreso Cargo') {
+            $mensaje .= 'El envío se realizo por Expreso Cargo y va a llegar a tu domicilio dentro de las próximas 48hs hábiles.';
+        }
+        if($transporte === 'Via Cargo') {
+            $mensaje .= 'El envío se realizo por Vía Cargo y el numero de guía es <strong>'.$guia.'</strong>
+            Podes seguir tu envio desde la pagina de Via Cargo. <br><a href="https://www.viacargo.com.ar/" target="_blank"> https://www.viacargo.com.ar/</a>';
+        }
+        if(!empty($observaciones) && $transporte !== 'Otros'){
+            $mensaje .= '<p>Te queriamos comentar:<br>'.$observaciones.'</p>';
+        }
+        if($transporte === 'Otros'){
+            $mensaje .= '<p>Te queriamos comentar:<br>'.$observaciones.'</p>';
+        }
+        $mensaje .= 'Ante cualquier duda o consulta te podes comunicar por wahtsapp al +54 9 3512 77-1274 o haciendo click en el siguiente link <a href="http://bit.ly/2BxW45T" target="_blank">bit.ly/2BxW45T</a>';
+        $mail = new PHPMailer(true);
+        try {
+            //Server settings
+            $mail->SMTPDebug = false;                      // Enable verbose debug output
+            $mail->isSMTP();                                            // Send using SMTP
+            $mail->Host       = 'in-v3.mailjet.com';                    // Set the SMTP server to send through
+            $mail->SMTPAuth   = true;                                   // Enable SMTP authentication
+            $mail->Username   = '374ce7f837d5f3921bb05507b22a2e73';                     // SMTP username
+            $mail->Password   = '914766e4c219e2a6262344b9cd7fc935';                               // SMTP password
+            $mail->SMTPSecure = PHPMailer::ENCRYPTION_STARTTLS;         // Enable TLS encryption; `PHPMailer::ENCRYPTION_SMTPS` encouraged
+            $mail->Port       = 587;
+            $mail->CharSet      = 'UTF-8';                                  // TCP port to connect to, use 465 for `PHPMailer::ENCRYPTION_SMTPS` above
         
-    //         //Recipients
-    //         $mail->setFrom('guias@tp3d.com.ar', 'TP3D');
-    //         $mail->addAddress($email, $nombre);     // Add a recipient
+            //Recipients
+            $mail->setFrom('guias@tp3d.com.ar', 'TP3D');
+            $mail->addAddress($email, $nombre);     // Add a recipient
 
         
-    //         // Content
-    //         $mail->isHTML(true);                                  // Set email format to HTML
-    //         $mail->Subject = '¡Te realizamos un envio!';
-    //         $mail->Body    = $mensaje;
+            // Content
+            $mail->isHTML(true);                                  // Set email format to HTML
+            $mail->Subject = '¡Te realizamos un envio!';
+            $mail->Body    = $mensaje;
         
-    //         $mail->send();
-    //         return 'Mensaje enviado';
-    //     } catch (Exception $e) {
-    //         return "Mensaje no pudo ser enviado: {$mail->ErrorInfo}";
-    //     }
-    // }
+            $mail->send();
+            return 'Mensaje enviado';
+        } catch (Exception $e) {
+            return "Mensaje no pudo ser enviado: {$mail->ErrorInfo}";
+        }
+    }
 
     public static function create_guia($nombre,$dni,$email,$transporte,$fecha,$guia,$operacion,$cp,$observaciones) {
         $error = true;
@@ -78,7 +78,7 @@ class Guia{
         ]);
         if($validator->validate()) {
             $guias = Guias::create(['nombre' => $nombre,'dni' => $dni, 'email' => $email, 'transporte' => $transporte, 'fecha' => $fecha, 'guia' => $guia, 'operacion' => $operacion, 'cp' => $cp, 'observaciones' => $observaciones]);
-            //self::email_mandar($email,$guia,$transporte,$nombre,$fecha,$observaciones);
+            self::email_mandar($email,$guia,$transporte,$nombre,$fecha,$observaciones);
             return $guias;
            
         } else {
