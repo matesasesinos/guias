@@ -60,7 +60,7 @@ if(isset($_GET['action']) && $_GET['action'] === 'importar_guia'){
     if ($_FILES["importar"]["size"] > 0) { 
         $file = fopen($fileName, "r");
         $flag = true;
-        $row = 1;
+        $row = 0;
         while (($column = fgetcsv($file, 10000, ",")) !== FALSE) {
             if($flag) { $flag = false; continue; }
             echo $column[0].'<br>';
