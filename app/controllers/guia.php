@@ -28,7 +28,7 @@ class Guia{
             Podes seguir tu envio desde la pagina de Via Cargo. <br><a href="https://www.viacargo.com.ar/" target="_blank"> https://www.viacargo.com.ar/</a>';
         }
         if(!empty($observaciones)){
-            $mensaje .= '<br>Te queriamos comentar:<p>'.$observaciones.'</p>';
+            $mensaje .= '<p>Te queriamos comentar:<br>'.$observaciones.'</p>';
         }
         $mensaje .= 'Ante cualquier duda o consulta te podes comunicar por wahtsapp al +54 9 3512 77-1274.<br>
         Muchas gracias por confiar en nosotros.<br>
