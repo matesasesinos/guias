@@ -30,6 +30,9 @@ class Guia{
         if(!empty($observaciones)){
             $mensaje .= '<p>Te queriamos comentar:<br>'.$observaciones.'</p>';
         }
+        if($transporte === 'Otros'){
+            $mensaje .= '<p>Te queriamos comentar:<br>'.$observaciones.'</p>';
+        }
         $mensaje .= 'Ante cualquier duda o consulta te podes comunicar por wahtsapp al +54 9 3512 77-1274.<br>
         Muchas gracias por confiar en nosotros.<br>
         Saludos<br>
