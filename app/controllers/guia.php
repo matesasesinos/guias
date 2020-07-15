@@ -33,10 +33,7 @@ class Guia{
         if($transporte === 'Otros'){
             $mensaje .= '<p>Te queriamos comentar:<br>'.$observaciones.'</p>';
         }
-        $mensaje .= 'Ante cualquier duda o consulta te podes comunicar por wahtsapp al +54 9 3512 77-1274.<br>
-        Muchas gracias por confiar en nosotros.<br>
-        Saludos<br>
-        TP3D';
+        $mensaje .= 'Ante cualquier duda o consulta te podes comunicar por wahtsapp al +54 9 3512 77-1274 o haciendo click en el siguiente link <a href="http://bit.ly/2BxW45T" target="_blank">bit.ly/2BxW45T</a>';
         $mail = new PHPMailer(true);
         try {
             //Server settings
@@ -139,10 +136,9 @@ class Guia{
                 $guias->guia = $guia;
                 $guias->operacion = $operacion;
                 $guias->cp = $cp;
-                if($guias->save()){
-                    self::email_mandar($email,$guia,$transporte,$nombre,$fecha,$observaciones);
-                    return header('Location: ../importar.php?msg=exito');
-                } 
+                $guias->save();
+                self::email_mandar($email,$guia,$transporte,$nombre,$fecha,$observaciones);
+                return header('Location: ../importar.php?msg=exito');
             }
         } else {
             return header('Location: ../importar.php?msg=error');
