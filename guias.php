@@ -1,6 +1,6 @@
 <?php
 require './start.php';
-use Controllers\Guia;
+use App\Controllers\Guia;
 require './tpl/head_guia.php';
 
 ?>
@@ -33,7 +33,7 @@ require './tpl/head_guia.php';
                         foreach(Guia::guias() as $g){
                     ?>
                     <tr>
-                       <td>#<?php echo $g['id']?></td>
+                       <td><?php echo $g['id']?></td>
                        <td><?php echo $g['nombre']?></td>
                        <td><?php echo $g['guia']?></td>
                        <td><?php echo $g['fecha']?></td>

@@ -7,6 +7,7 @@ require './tpl/head_guia.php';
 <div class="container">
     <div class="row">
         <div class="col">
+			<div class="text-center mb-5"><a href="http://seguimiento.tp3d.com.ar/ejemplo2.xlsx">Descargar Archivo de ejemplo</a> Luego de cambiar los datos, guardar como CSV para importar</div>
         <?php
             if(isset($_GET['msg'])) {
                 if($_GET['msg'] === 'exito'){

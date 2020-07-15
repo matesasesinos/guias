@@ -1,15 +1,8 @@
 <?php session_start();
-define('DS', DIRECTORY_SEPARATOR, true);
-define('BASE_PATH', __DIR__ . DS, TRUE);
-ini_set('display_errors', 1);
-ini_set('display_startup_errors', 1);
-error_reporting(E_ALL);
-require BASE_PATH.'vendor/autoload.php';
-require_once( __DIR__ . '/config.php');
-use \App\Models\Database;
-new Database();
+
 require_once(__DIR__ .'/start.php');
-use App\Controllers\Guia;?>
+use App\Controllers\Guia;
+?>
 <?php require './tpl/head.php' ?>
 <div class="container-fluid pl-5 pr-5">
     <div class="row">
@@ -18,7 +11,7 @@ use App\Controllers\Guia;?>
             <form action="" class="h-100" method="post">
                 <div class="form-group">
                     <label for="">Ingrese su DNI</label>
-                    <input type="number" class="form-control form-control-lg" name="dni">
+                    <input type="number" class="form-control form-control-lg" name="dni" required>
                 </div>
                 <button class="btn btn-lg btn-primary">Buscar</button>
             </form>
@@ -41,7 +34,7 @@ use App\Controllers\Guia;?>
                     </tr>
                 </thead>
                 <tbody>
-                <?php if(isset($_POST['dni'])){
+                <?php if(isset($_POST['dni']) && !empty($_POST['dni'])){
                     $guias = Guia::buscar($_POST['dni']);
                     foreach($guias as $g){
                     ?>
@@ -59,7 +52,9 @@ use App\Controllers\Guia;?>
                         <td><?php echo $g['observaciones']?></td>
                     </tr>
                 <?php }
-                 }
+                 } else {
+					echo '<h2>El campo DNI es obligatorio.</h2>';
+				}
                 ?>
                 </tbody>
             </table>

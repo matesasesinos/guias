@@ -61,7 +61,7 @@ if(isset($_GET['action']) && $_GET['action'] === 'importar_guia'){
         $file = fopen($fileName, "r");
         $flag = true;
         $row = 1;
-        while (($column = fgetcsv($file, 10000, ";")) !== FALSE) {
+        while (($column = fgetcsv($file, 10000, ",")) !== FALSE) {
             if($flag) { $flag = false; continue; }
             echo $column[0].'<br>';
             Guia::import_guia($column[0],$column[1],$column[2],$column[3],$column[4],$column[5],$column[6],$column[7],$column[8]);

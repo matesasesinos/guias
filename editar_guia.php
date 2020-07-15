@@ -1,6 +1,6 @@
 <?php
 require './start.php';
-use Controllers\Guia;
+use App\Controllers\Guia;
 require './tpl/head_guia.php';
 $guia = Guia::get_guia($_GET['id']);
 ?>

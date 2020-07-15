@@ -2,7 +2,8 @@
     "require": {
         "illuminate/database": "^7.18",
         "infinitypaul/php-validator": "^1.0",
-        "illuminate/pagination": "^7.19"
+        "illuminate/pagination": "^7.19",
+        "phpmailer/phpmailer": "^6.1"
     },
     "autoload": {
         "classmap": ["app/controllers/","app/models/"],
